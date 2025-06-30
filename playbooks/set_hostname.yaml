@@ -1,0 +1,11 @@
+---
+- name: Update web servers
+  hosts: all
+#  remote_user: root
+  
+
+  tasks:
+
+  - name: Example from an Ansible Playbook
+    hostname:
+      name: '{{ hostname_hostname }}'

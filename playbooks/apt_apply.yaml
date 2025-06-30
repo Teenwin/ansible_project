@@ -1,0 +1,21 @@
+---
+- name: Update web servers
+  hosts: all
+#  remote_user: root
+  
+
+  tasks:
+
+  - name: apt install
+    apt:
+      pkg: 
+        - pwgen
+      state: present
+
+  - name: test pwgen
+    shell: 'pwgen -N 1 -s 40'
+    register: var_password
+  
+  - name: Print return information from the previous task
+    debug:
+      msg: '{{ var_password.stdout }}'

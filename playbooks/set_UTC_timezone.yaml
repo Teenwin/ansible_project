@@ -1,0 +1,22 @@
+---
+- name: Update web servers
+  hosts: all
+  #remote_user: root
+  
+
+  tasks:
+
+  - name: Set UTC timezone
+    timezone:
+      name: '{{ var_timezone }}'
+
+  - name: save timedatectl
+    command: 
+      cmd: timedatectl
+    register: var_timedatectl
+
+  - name: show result of timedatectl
+    debug:
+      msg: 
+        - '{{ var_timedatectl.stdout_lines }}'
+        - '{{ ansible_distribution }}'
