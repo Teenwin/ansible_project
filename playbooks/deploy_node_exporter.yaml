@@ -1,0 +1,12 @@
+---
+- name: Update web servers
+  hosts: all
+#  remote_user: root
+  
+
+  tasks:
+
+  - name: import role node exporter
+    import_role: 
+      name: cloudalchemy.node_exporter
+      

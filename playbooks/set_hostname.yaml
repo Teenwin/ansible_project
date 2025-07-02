@@ -6,6 +6,6 @@
 
   tasks:
 
-  - name: Example from an Ansible Playbook
+  - name: set hostname
     hostname:
       name: '{{ hostname_hostname }}'

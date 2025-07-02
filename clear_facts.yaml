@@ -1,0 +1,8 @@
+---
+- name: Update web servers
+  hosts: all
+#  remote_user: root
+  
+  tasks:
+    - name: Clear gathered facts from all currently targeted hosts
+      ansible.builtin.meta: clear_facts
